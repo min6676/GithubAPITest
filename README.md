@@ -5,6 +5,6 @@ Github API 테스트 앱입니다.
 
 class K {
     static var HEADERS: HTTPHeaders {
-        return ["Authorization" : "token [Github Personal Access Token 값]"]
+        return ["Authorization" : "token [**Github Personal Access Token 값**]"]
     }
 }
