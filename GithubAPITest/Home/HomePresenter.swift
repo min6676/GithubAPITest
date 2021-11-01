@@ -24,12 +24,18 @@ class HomePresenter {
     }
     
     func fetchData(page: Int, query: String) {
+
         if !query.isEmpty {
-            self.service.getUsers(page: page, query: query) { userList, isResult in
+            self.service.getUsers(page: page, query: query) { [weak self] userList, isResult, totalCount in
                 if isResult {
-                    self.homeView?.setUsers(userList)
+                    if (totalCount - (page * 20)) > 0 {
+                        self?.homeView?.setUsers(userList, moreFetch: true)
+                    } else {
+                        self?.homeView?.setUsers(userList, moreFetch: false)
+                    }
+                    
                 } else {
-                    self.homeView?.setEmpty()
+                    self?.homeView?.setEmpty()
                 }
             }
         } else {

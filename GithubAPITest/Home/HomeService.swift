@@ -8,10 +8,11 @@
 import Alamofire
 
 class HomeService {
-    func getUsers(page: Int, query: String, completion: @escaping ([UserInfo], Bool) -> Void ) {
+    func getUsers(page: Int, query: String, completion: @escaping ([UserInfo], Bool, Int) -> Void ) {
         let url = Constant.BASE_URL + "search/users?q=\(query)&per_page=20&page=\(page)"
+        let encodedString = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? url
         
-        AF.request(url, method: .get, encoding: JSONEncoding.default, headers: K.HEADERS).validate().responseDecodable(of: UserResponse.self) { response in
+        AF.request(encodedString, method: .get, encoding: JSONEncoding.default, headers: K.HEADERS).validate().responseDecodable(of: UserResponse.self) { response in
             switch response.result {
             case .success(let response):
                 var isResult = true
@@ -20,10 +21,9 @@ class HomeService {
                 } else {
                     isResult = false
                 }
-                completion(response.items, isResult)
+                completion(response.items, isResult, response.total_count)
             case .failure:
                 print("Network Error")
-                debugPrint(response)
             }
         }
     }

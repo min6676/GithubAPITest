@@ -8,8 +8,6 @@
 import Foundation
 
 protocol HomeView: NSObjectProtocol {
-    func startLoading()
-    func finishLoading()
-    func setUsers(_ users: [UserInfo])
+    func setUsers(_ users: [UserInfo], moreFetch: Bool)
     func setEmpty()
 }
