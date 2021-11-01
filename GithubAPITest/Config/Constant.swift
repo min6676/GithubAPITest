@@ -9,6 +9,6 @@ import Alamofire
 struct Constant {
     static let BASE_URL = "https://api.github.com/"
     static var HEADERS: HTTPHeaders {
-        return ["Authorization" : "token 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"]
+        return ["Authorization" : "token ghp_QcH70dxfKk6IMroamSqG2S00gcgKkQ0mSV0"]
     }
 }
