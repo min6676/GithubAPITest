@@ -108,7 +108,7 @@ extension HomeViewController: UISearchResultsUpdating {
             }
             
             self.requestSearchWorkItem = requestSearchWorkItem
-            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500), execute: requestSearchWorkItem)
+            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(300), execute: requestSearchWorkItem)
         }
     }
 }
