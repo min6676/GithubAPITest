@@ -5,12 +5,12 @@
 //  Created by 김민순 on 2021/10/31.
 //
 
-struct UserResponse: Codable {
+struct UserResponse: Decodable {
     let total_count: Int
     let items: [UserInfo]
 }
 
-struct UserInfo: Codable {
+struct UserInfo: Decodable {
     let login: String
     let avatar_url: String
 }

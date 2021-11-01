@@ -8,5 +8,6 @@ target 'GithubAPITest' do
   # Pods for GithubAPITest
   pod 'Alamofire', '~> 5.4'
   pod 'Kingfisher', '~> 7.0'
+  pod 'SnapKit', '~> 5.0.0'
 
 end

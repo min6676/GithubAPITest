@@ -41,6 +41,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="profileImageView" destination="OXb-tW-hou" id="L4F-n1-usd"/>
+                <outlet property="userLabel" destination="gOJ-RT-vZI" id="koL-vA-rGi"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="145.3125"/>
         </tableViewCell>

@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol HomeView {
+protocol HomeView: NSObjectProtocol {
     func startLoading()
     func finishLoading()
     func setUsers(_ users: [UserInfo])
