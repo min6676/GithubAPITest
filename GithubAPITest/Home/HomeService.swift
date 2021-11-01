@@ -11,7 +11,7 @@ class HomeService {
     func getUsers(page: Int, query: String, completion: @escaping ([UserInfo], Bool) -> Void ) {
         let url = Constant.BASE_URL + "search/users?q=\(query)&per_page=20&page=\(page)"
         
-        AF.request(url, method: .get, encoding: JSONEncoding.default, headers: Constant.HEADERS).validate().responseDecodable(of: UserResponse.self) { response in
+        AF.request(url, method: .get, encoding: JSONEncoding.default, headers: K.HEADERS).validate().responseDecodable(of: UserResponse.self) { response in
             switch response.result {
             case .success(let response):
                 var isResult = true
