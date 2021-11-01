@@ -18,7 +18,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     fileprivate var users = [UserInfo]()
     fileprivate let presenter = HomePresenter(homeService: HomeService())
     
-    
     private var currentPage = 1
     private var requestSearchWorkItem: DispatchWorkItem?
     
