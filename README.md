@@ -7,5 +7,4 @@ class K {
     static var HEADERS: HTTPHeaders {
         return ["Authorization" : "token [Github Personal Access Token 값]"]
     }
-
 }
